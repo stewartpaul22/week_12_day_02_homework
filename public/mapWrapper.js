@@ -4,3 +4,10 @@ var MapWrapper = function(container, coords, zoom){
     zoom: zoom
   });
 }
+
+MapWrapper.prototype.addMarker = function (coords) {
+  var marker = new google.maps.Marker({
+    position: coords,
+    map: this.googleMap
+  });
+};
