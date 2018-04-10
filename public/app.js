@@ -3,7 +3,11 @@ var initialize = function(){
   var container = document.getElementById('main-map');
   var mainMap = new MapWrapper(container, center, 15);
 
+  const bounceButton = document.querySelector('#button-bounce-markers');
+  bounceButton.addEventListener('click', mainMap.bounceMarkers.bind(mainMap));
+
   mainMap.addMarker(center);
+  mainMap.addClickEvent();
 };
 
 window.addEventListener('load', initialize);
