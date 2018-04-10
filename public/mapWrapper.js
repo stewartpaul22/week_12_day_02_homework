@@ -11,7 +11,8 @@ var MapWrapper = function(container, coords, zoom, infoWindowText){
 
 MapWrapper.prototype.addMarker = function (coords) {
   var infowindow = new google.maps.InfoWindow({
-    content: this.infoWindowText
+    content: this.infoWindowText,
+    maxWidth: 200
   });
 
   var marker = new google.maps.Marker({
