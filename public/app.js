@@ -9,8 +9,20 @@ var initialize = function(){
   const bounceButton = document.querySelector('#button-bounce-markers');
   bounceButton.addEventListener('click', mainMap.bounceMarkers.bind(mainMap));
 
-  // mainMap.addInfoWindow();
   mainMap.addMarker(center);
+
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString,
+    maxWidth: 200,
+    title: 'The Malecon, Havana, Cuba'
+  });
+
+  let initialMarker = mainMap.markers[0];
+
+  initialMarker.addListener('click', function() {
+    infoWindow.open(this.googleMap, initialMarker);
+  });
+
   mainMap.addClickEvent();
 };
 
