@@ -23,6 +23,11 @@ MapWrapper.prototype.addClickEvent = function(){
 
 MapWrapper.prototype.bounceMarkers = function () {
   this.markers.forEach(function(marker){
-    marker.setAnimation(google.maps.Animation.BOUNCE)
+    marker.setAnimation(google.maps.Animation.BOUNCE);
   })
+};
+
+MapWrapper.prototype.moveTo = function () {
+  this.googleMap.setCenter({lat: -33.448890, lng: -70.669265});
+  this.addMarker({lat: -33.448890, lng: -70.669265});
 };

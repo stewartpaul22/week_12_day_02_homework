@@ -9,6 +9,9 @@ var initialize = function(){
   const bounceButton = document.querySelector('#button-bounce-markers');
   bounceButton.addEventListener('click', mainMap.bounceMarkers.bind(mainMap));
 
+  const takeMeButton = document.querySelector('#take-me-to');
+  takeMeButton.addEventListener('click', mainMap.moveTo.bind(mainMap));  
+
   mainMap.addMarker(center);
 
   var infoWindow = new google.maps.InfoWindow({
